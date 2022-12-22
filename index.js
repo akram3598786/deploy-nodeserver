@@ -8,12 +8,13 @@ require('dotenv').config();
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/auth", AuthRouter);
 app.use("/notice",NoticeRouter);
 
 // const somple=(req,res)=>{
-//     res.send("Working fine")
+//     res.send("Working fine") 
 // }
 // app.get("/",somple);
 
